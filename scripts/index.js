@@ -2,6 +2,11 @@
 
 console.log(characters[0]);
 
+//////////////////////////////////////////////////////////////
+//What is the total number of characters?/////////////////////
+//////////////////////////////////////////////////////////////
+
+
 total = 0;
 characters.forEach(function(character){
     total ++
@@ -77,15 +82,53 @@ let valyrianCount = 0;
 let valyrianArray = [];
 
 characters.forEach(function(character){
-    if (character.culture = "Valyrian"){
-        valyrianArray.push(character.name)
+    if (character.culture == "Valyrian"){
+        // valyrianArray.push(character.name);
         valyrianCount += 1;
     }
 })
 
-console.log(valyrianCount);
-console.log(valyrianArray);
+console.log(`Valyrian count: ${valyrianCount}`);
+console.log(`Valyrian Array : ${valyrianArray}`);
+
 //////////////////////////////////////////////////////////////
-//What actor play "Hot Pie"?
+//What actor play "Hot Pie"?//////////////////////////////////
 //////////////////////////////////////////////////////////////
 
+let hotpie = [];
+
+characters.forEach(function(character){
+    if (character.name == "Hot Pie"){
+        hotpie.push(character.playedBy);
+    }
+})
+
+console.log(`Actor that plays "Hot Pie" is ${hotpie}`)
+
+//////////////////////////////////////////////////////////////
+// How many characters are not in the tv show?////////////////
+//////////////////////////////////////////////////////////////
+
+noActor = 0;
+
+characters.forEach(function(character){
+    if (character.playedBy[0] == ""){
+        noActor += 1;
+    }
+})
+
+console.log(`There are ${noActor} characters that are not played by anybody.`)
+
+//////////////////////////////////////////////////////////////
+// Produce a list characters with the last name "Targaryen"///
+//////////////////////////////////////////////////////////////
+
+numTargaryen = [];
+
+characters.forEach(function(character){
+    if ("Targaryen" in character.name){
+        numTargaryen.push(character.name);
+    }
+})
+
+console.log(`There are ${numTargaryen.length} Targaryens in GOT.`);
